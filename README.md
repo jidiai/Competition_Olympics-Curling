@@ -1,1 +1,80 @@
 # Competition_Olympics-Curling
+
+## Environment
+
+Check details in Jidi Competition [RLChina2022智能体竞赛](http://www.jidiai.cn/compete_detail?compete=14)
+
+
+### “奥林匹克 冰壶” :
+<b>标签：</b>不完全观测；连续动作空间；连续状态空间
+
+<b>环境简介：</b>智能体参加奥林匹克运动会。在这个系列的竞赛中， 两个智能体参加冰壶竞赛，目标是将球推至目标中心点处。
+
+<b>环境规则:</b> 
+1. 对战双方各控制四个有相同质量和半径的弹性小球智能体；
+2. 双方智能体轮流向场地中央的目标点抛掷小球，每方智能体有四次抛掷的机会；
+3. 四个回合结束后，所抛掷小球离目标点近的一方取得胜利；
+4. 智能体可以互相碰撞，也可以碰撞墙壁，但会损失一定的速度；
+5. 智能体自身有能量，每步消耗的能量与施加的驱动力和位移成正比；
+6. 智能体能量同时以固定速率恢复，如果能量衰减到零，智能体出现疲劳，导致不能加力；
+7. 智能体的视野限定为自身朝向前方30*30的矩阵区域；
+8. 当回合结束时环境结束。
+
+<b>动作空间：</b>连续；两维。分别代表施加力量和转向角度。
+
+<b>观测：</b>每一步环境返回一个30x30的二维矩阵，详情请见*/olympics_engine*文件夹
+
+<b>奖励函数:</b> 距离目标点近的一方得100分，否则得0分。
+
+<b>环境终止条件:</b> 当回合结束时环境结束。
+
+<b>评测说明：</b>该环境属于零和游戏，在金榜的积分按照ELO进行匹配算法进行计算并排名。零和游戏在匹配对手或队友时，按照瑞士轮进行匹配。
+平台验证和评测时，在单核CPU上运行用户代码（暂不支持GPU），限制用户每一步返回动作的时间不超过1s，内存不超过500M。
+
+<b>报名方式：</b>访问“及第”平台（ www.jidiai.cn ），在“擂台”页面选择“RLChina 智能体挑战赛 - 壬寅年春赛季”即可报名参赛。RLCN 微信公众号后台回复“智能体竞赛”，可进入竞赛讨论群。
+
+This is a POMDP simulated environment of 2D sports games where althletes are spheres and have continuous action space (torque and steering). The observation is a 30*30 array of agent's limited view range. We introduce collision and agent's fatigue such that no torque applies when running out of energy.
+
+This is for now a beta version and we intend to add more sports scenario, stay tuned :)
+
+---
+## Dependency
+
+>conda create -n olympics python=3.8.5
+
+>conda activate olympics
+
+>pip install -r requirements.txt
+
+---
+
+## Run a game
+
+>python olympics_engine/main.py
+
+---
+
+## Train a baseline agent 
+
+>python rl_trainer/main.py
+
+You can also locally evaluate your trained model by executing:
+
+>python evaluation_local.py --my_ai rl --opponent random --episode=50
+
+
+## How to test submission
+
+You can locally test your submission. At Jidi platform, we evaluate your submission as same as *run_log.py*
+
+For example,
+
+>python run_log.py --my_ai "rl" --opponent "random"
+
+in which you are controlling agent 1 which is green.
+
+## Ready to submit
+
+1. Random policy --> *agents/random/submission.py*
+2. RL policy --> *all files in agents/rl*
+
