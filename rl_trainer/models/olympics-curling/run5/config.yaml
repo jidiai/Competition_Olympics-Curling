@@ -1,0 +1,13 @@
+algo: ppo
+controlled_player: 0
+game_name: olympics-curling
+load_episode: 1500
+load_model: false
+load_run: 1
+max_episodes: 5000
+model_episode: 0
+opponent: random
+opponent_load_episode: null
+render: false
+save_interval: 200
+seed: 1
