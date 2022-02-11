@@ -1,8 +1,9 @@
+import torch.cuda
 import torch.nn as nn
 import torch.nn.functional as F
 
 
-device = 'cpu'
+device = 'cuda' if torch.cuda.is_available() else 'cpu'
 
 
 class Actor(nn.Module):

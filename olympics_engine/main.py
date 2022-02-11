@@ -89,7 +89,6 @@ if __name__ == "__main__":
             if RENDER:
                 game.render()
 
-
         print("episode duration: ", time.time() - time_epi_s, "step: ", step, (time.time() - time_epi_s)/step)
         if args.map == 'billiard':
             print('reward =', game.total_reward)

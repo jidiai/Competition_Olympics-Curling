@@ -9,9 +9,9 @@ class random_agent:
     def seed(self, seed = None):
         random.seed(seed)
 
-    def act(self, obs):
+    def select_action(self, obs, train):
         force = random.uniform(self.force_range[0], self.force_range[1])
         angle = random.uniform(self.angle_range[0], self.angle_range[1])
 
-        return [[force], [angle]]
+        return [[force], [angle]], 0
 
