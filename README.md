@@ -2,6 +2,9 @@
 
 ## Environment
 
+<img src=https://github.com/jidiai/Competition_Olympics-Curling/blob/main/olympics_engine/assets/olympics%20curling.gif width=600>
+
+
 Check details in Jidi Competition [RLChina2022智能体竞赛](http://www.jidiai.cn/compete_detail?compete=14)
 
 
