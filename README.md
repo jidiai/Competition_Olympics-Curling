@@ -1,5 +1,16 @@
 # Competition_Olympics-Curling
+---
+## Update 16.Feb:
 
+We add one more game round to the curling environment with serving order switched. So in round one, agent purple start first and agent green finish last; while in round two agent green start first and agent purple finish last.
+我们在冰壶环境中额外添加了一局比赛，并互换双方发球顺序。如：第一局紫色方先发球，第二局绿色方先发球。
+
+After each round, a team scores one game point for each of its own stones closer to the center than any stone of the opposite team and only one team can score in the end of each round. After two game rounds, total game point will be computed and the winner has the highest total score.
+每一局游戏结束时将会进行当局游戏得分结算，一方每有一个冰壶比另一方所有冰壶更靠近圆心则得一分，每局比赛仅有一方得分；两局比赛结束后，将根据两局比赛的总得分决出胜负，得分高的一方为获胜方。
+
+
+
+---
 ## Environment
 
 <img src=https://github.com/jidiai/Competition_Olympics-Curling/blob/main/olympics_engine/assets/olympics%20curling.gif width=600>
