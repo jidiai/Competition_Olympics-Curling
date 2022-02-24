@@ -16,6 +16,8 @@ We add more information to the output of the environment. For each simulation st
 
 We also bring the cross line (red) closer to the center of the curling field, as we want the agent to know more about the field to help decision making before crossing the line.
 
+我们在冰壶环境的输出中添加了关于比赛的额外信息，包括控制队伍颜色，是否已释放冰壶，游戏局数，剩余投掷冰壶数量（包含对手数据），比分（包含对手比分）以及玩家编号；同时我们将冰壶释放红线移至更靠近场地中心位置（向下），给予智能体更多场地信息。
+
 
 ## Update 16.Feb:
 
