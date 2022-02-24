@@ -1,5 +1,22 @@
 # Competition_Olympics-Curling
 ---
+## Update 24.Feb:
+We add more information to the output of the environment. For each simulation step, the environment takes action from both agents as input and return the following dict to each agent:
+
+    {
+    obs         : partial observation of current controlled agent, filled with -1 when is not your turn;
+    team color  : color of controlled agents(purple for agent 0, green for agent 1);
+    release     : indicator of whether the agent has crossed the release line (shown as red line), and whether the environment will consider the received actions
+    game round  : 0 or 1, indicating current game round;
+    throws left : how many numbers of throws left, including the opponent team, maximum 4 for each game round;
+    score       : current score board, including opponent team, updated when each game round ends;
+    controlled_
+    player_index: 0 or 1,  representing agent purple or green respectively
+    }
+
+We also bring the cross line (red) closer to the center of the curling field, as we want the agent to know more about the field to help decision making before crossing the line.
+
+
 ## Update 16.Feb:
 
 We add one more game round to the curling environment with serving order switched. So in round one, agent purple start first and agent green finish last; while in round two agent green start first and agent purple finish last.
