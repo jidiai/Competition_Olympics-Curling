@@ -53,7 +53,7 @@ Check details in Jidi Competition [RLChina2022智能体竞赛](http://www.jidiai
 
 <b>动作空间：</b>连续；两维。分别代表施加力量和转向角度。
 
-<b>观测：</b>每一步环境返回一个30x30的二维矩阵，详情请见*/olympics_engine*文件夹
+<b>观测：</b>每一步环境返回一个30x30的二维矩阵，详情请见 */olympics_engine*文件夹 以及其他对局信息。
 
 <b>奖励函数:</b> 距离目标点近的一方得100分，否则得0分。
 
